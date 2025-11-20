@@ -47,13 +47,13 @@ class LASToGeometryDataSourceReader(DataSourceReader):
         self.chunk_count = 0
         self.logger = logging.getLogger(__name__)
         self.logger.info("Init LASToGeometryDataSourceReader")
-
+    """
     def check_directory(directory_path):
         if os.path.isdir(directory_path):
             print(f"Directory exists: {directory_path}")
         else:
             print(f"Directory does not exist: {directory_path}")
-
+    """
     def read(self, partition: Optional[int] = None) -> Generator[Tuple[int, str, Optional[str], Dict[str, str]], None, None]:
         """
         Read the LAS file and yield data for each points.
