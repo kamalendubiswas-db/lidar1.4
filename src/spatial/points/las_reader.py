@@ -184,12 +184,6 @@ class LASToGeometryDataSource(DataSource):
         return LASToGeometryDataSourceReader(schema, self.options)
 
 def register_las_data_source():
-    """if os.getenv("IS_SERVERLESS") == "TRUE":
-        raise RuntimeError(
-            "Error: This data source can only be executed in a non-serverless context. "
-            "Please attach the notebook to a traditional compute cluster and try again."
-        )"""
-    
     spark = SparkSession.getActiveSession()
     try:
         spark.dataSource.register(LASToGeometryDataSource)
